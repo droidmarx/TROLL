@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Page</title>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+</head>
+<body>
+  
+</body>
+</html>
 
     <style>
       * {
@@ -87,14 +93,24 @@
 
         const username = form.username.value.trim();
         const password = form.password.value.trim();
+        
+        
 
         if (username === "Master" && password === "Master") {
-          window.location.href = "./Limpar Certificação.html";
-        } else if (username === "" || password === "") {
+          window.location.href = './Limpar Certificação.html'
+
+            let mathRandom = Math.random().toString(16).substr(2)
+            let token = mathRandom + mathRandom
+    
+            localStorage.setItem('token', token)
+          }
+          
+          else if (username === "" || password === "") {
           alert("Please enter a username and password");
         } else {
           alert("Incorrect username or password");
           form.reset();
+          
         }
       });
     </script>
