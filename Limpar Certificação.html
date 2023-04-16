@@ -100,6 +100,11 @@
       color: #0077cc;
     }
 
+    .blur {
+      filter: blur(5px);
+      transition: filter 0.5s ease-in-out; 
+    }
+
       </style>
 </head>
 
@@ -117,7 +122,6 @@
   <iframe title="myFrame" id="certification-frame">frame</iframe>
 
   <script>
-    
 
      if(localStorage.getItem('token') == null){
       alert('Você precisa estar logado para acessar essa página')
@@ -131,19 +135,20 @@
 
       const iframe = document.querySelector("#certification-frame");
       if (iframe) {
-        iframe.remove();
-      }
+        iframe.remove();}
 
       const newIframe = document.createElement("iframe");
       newIframe.id = "certification-frame";
       newIframe.src = endpoint;
-      document.body.appendChild(newIframe);
-    }
+      document.body.appendChild(newIframe);}
     
     function handleLogout() {
-      localStorage.removeItem('token')
-      window.location.href = "./index.html";
-    }
+    document.body.classList.add('blur');
+    localStorage.removeItem('token');
+    setTimeout(() => {
+    window.location.href = "./index.html";
+  }, 500);
+}
       
   </script>
 </body>
