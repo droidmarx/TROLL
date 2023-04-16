@@ -1,245 +1,139 @@
 <!DOCTYPE html>
-
 <html lang="pt-br">
-
 <head>
-
   <meta charset="UTF-8">
-
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/7893/7893969.png">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
   <title>Login TrollBox</title>
-
 </head>
-
 <body>
-
   
-
 </body>
-
 </html>
-
-
 
     <style>
-
       * {
-
         margin: 0;
-
         padding: 0;
-
         box-sizing: border-box;
-
       }
-
-
 
       body {
-
         font-family: sans-serif;
-
         background-color: #f7f7f7;
-
       }
-
-
 
       .container {
-
+        display: flex;
+        flex-direction: column;
         max-width: 400px;
-
         margin: 50px auto;
-
         padding: 20px;
-
         background-color: #fff;
-
         border-radius: 10px;
-
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
       }
-
-
 
       h1 {
-
+        font-family: 'Bebas Neue';
+        font-size: 40px;
+        text-decoration: none;
+        color: #0077cc;
         text-align: center;
-
         margin-bottom: 20px;
-
       }
-
-
 
       form {
-
         display: flex;
-
         flex-direction: column;
-
       }
-
-
 
       label {
-
         margin-bottom: 5px;
-
         font-weight: bold;
-
       }
-
-
 
       input[type="text"],
-
       input[type="password"] {
-
         padding: 10px;
-
         border-radius: 5px;
-
         border: 1px solid #ccc;
-
         margin-bottom: 10px;
-
       }
-
-
 
       button[type="submit"] {
-
         padding: 10px;
-
         border-radius: 5px;
-
         border: none;
-
         background-color: #0077cc;
-
         color: #fff;
-
         font-weight: bold;
-
         cursor: pointer;
-
         transition: background-color 0.3s ease;
-
       }
 
-
-
-      button[type="submit"]:hover {
-
+        button[type="submit"]:hover {
         background-color: #0060a7;
+      }
+
+      .blur {
+        filter: blur(10px);
+        transition: filter 0.4s ease-in-out;
 
       }
 
-    h1{ 
-       font-family: 'Bebas Neue', cursive; 
-       font-size: 40px; 
-       text-decoration: none; 
-       color: #0077cc; 
-     }
 
+      
     </style>
-
   </head>
 
-
-
   <body>
-
     <div class="container">
-
-      <h1>TrollBox</h1>
-
+      <h1>trollbox</h1>
       <form>
-
         
-
-        <input type="text" id="username" placeholder="Usuário" name="username" required />
-
+        <input type="text" placeholder="Usuário" id="username" name="username" required />
         
-
-        <input type="password" id="password" placeholder="Senha" name="password" required />
-
+        <input type="password" placeholder="Senha" id="password" name="password" required />
         <button type="submit" id="login-btn">Login</button>
-
       </form>
-
     </div>
 
-
-
     <script>
-
+      
       const form = document.querySelector("form");
-
       const loginBtn = document.querySelector("#login-btn");
 
-
-
       form.addEventListener("submit", (e) => {
-
         e.preventDefault();
 
-
-
         const username = form.username.value.trim();
-
         const password = form.password.value.trim();
-
         
-
         
-
-
 
         if (username === "Master" && password === "Master") {
-
-          window.location.href = './Limpar Certificação.html'
-
-
+          document.body.classList.add('blur');
+          setTimeout(function() {
+          window.location.href = './Limpar Certificação.html'},500);
 
             let mathRandom = Math.random().toString(16).substr(2)
-
             let token = mathRandom + mathRandom
-
     
-
             localStorage.setItem('token', token)
-
           }
-
           
-
           else if (username === "" || password === "") {
-
-          alert("Por favor entre com usuário e senha");
-
+          alert("Por favor, insira um nome de usuário e senha");
         } else {
-
-          alert("Usuário e Senha incorretos");
-
+          alert("Usuário ou senha incorretos");
           form.reset();
-
           
-
         }
-
       });
-
     </script>
-
   </body>
-
 </html>
-
