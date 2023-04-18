@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,137 +9,131 @@
 
   <title>Login TrollBox</title>
 </head>
+
+<style>
+
+* {
+  margin: 10px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.troll {
+  position: fixed;
+  margin: 0 auto;
+  z-index: -1;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #0077cc;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  min-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff83;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  font-family: "Bebas Neue";
+  font-size: 40px;
+  text-decoration: none;
+  color: #0077cc;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+button[type="submit"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #0077cc;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0060a7;
+}
+
+.blur {
+  filter: blur(10px);
+  transition: filter 0.4s ease-in-out;
+}
+
+
+</style>
+
 <body>
   
-</body>
-</html>
-
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        display: block;
-        font-family: sans-serif;
-        background-image: url(troll.png);
-        background-color: #0077cc;
-        background-size: 80vh;
-        background-position: center;
-        background-repeat: no-repeat;
-        }
-
-      .container {
-        display: flex;
-        flex-direction: column;
-        max-width: 350px;
-        min-width: 350px;
-        margin: 60px auto;
-        padding: 20px;
-        background-color: #ffffff83;
-        border-radius: 10px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
-      }
-
-      h1 {
-        font-family: 'Bebas Neue';
-        font-size: 40px;
-        text-decoration: none;
-        color: #0077cc;
-        text-align: center;
-        margin-bottom: -20px;
-      }
-
-      form {
-        display: flex;
-        flex-direction: column;
-      }
-
-      label {
-        margin-bottom: 5px;
-        font-weight: bold;
-      }
-
-      input[type="text"],
-      input[type="password"] {
-        padding: 10px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        margin-bottom: 10px;
-      }
-
-      button[type="submit"] {
-        padding: 10px;
-        border-radius: 5px;
-        border: none;
-        background-color: #0077cc;
-        color: #fff;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-      }
-
-        button[type="submit"]:hover {
-        background-color: #0060a7;
-      }
-
-      .blur {
-        filter: blur(10px);
-        transition: filter 0.4s ease-in-out;
-
-      }
-
-
-      
-    </style>
-  </head>
-
-  <body>
-    <div class="container">
-      <h1>trollbox</h1>
-      <form>
-        
-        <input type="text" placeholder="Usuário" id="username" name="username" required />
-        
-        <input type="password" placeholder="Senha" id="password" name="password" required />
-        <button type="submit" id="login-btn">Login</button>
-      </form>
-    </div>
-
-    <script>
-      
-      const form = document.querySelector("form");
-      const loginBtn = document.querySelector("#login-btn");
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        const username = form.username.value.trim();
-        const password = form.password.value.trim();
-        
-        
-
-        if (username === "Master" && password === "Master") {
-          document.body.classList.add('blur');
-          setTimeout(function() {
-          window.location.href = './Limpar Certificação.html'},500);
-
-            let mathRandom = Math.random().toString(16).substr(2)
-            let token = mathRandom + mathRandom
+  
+  <footer class="container">
+      <div class="troll">
+        <img src="troll.png" alt="" width="240px" height="240px">
+      </div>
+    <h1>trollbox</h1>
+    <form>
+      <input type="text" placeholder="Usuário" id="username" name="username" required />
+      <input type="password" placeholder="Senha" id="password" name="password" required />
+      <button type="submit" id="login-btn">Login</button>
+    </form>
+  </footer>
     
-            localStorage.setItem('token', token)
-          }
-          
-          else if (username === "" || password === "") {
-          alert("Por favor, insira um nome de usuário e senha");
-        } else {
-          alert("Usuário ou senha incorretos");
-          form.reset();
-          
-        }
-      });
-    </script>
+  <script>
+    const form = document.querySelector("form");
+    const loginBtn = document.querySelector("#login-btn");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const username = form.username.value.trim();
+      const password = form.password.value.trim();
+
+      if (username === "Master" && password === "Master") {
+        document.body.classList.add("blur");
+        setTimeout(function () {
+          window.location.href = "./buscar.html";
+        }, 500);
+
+        let mathRandom = Math.random().toString(16).substr(2);
+        let token = mathRandom + mathRandom;
+
+        localStorage.setItem("token", token);
+      } else if (username === "" || password === "") {
+        alert("Por favor, insira um nome de usuário e senha");
+      } else {
+        alert("Usuário ou senha incorretos");
+        form.reset();
+      }
+    });
+  </script>
   </body>
 </html>
