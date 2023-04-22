@@ -1,101 +1,22 @@
 <!DOCTYPE html>
-<lang="pt-br">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/7893/7893969.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/index.css">
 
   <title>Login TrollBox</title>
 </head>
 
-<style>
-
-* {
-  margin: 10px;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.troll {
-  position: fixed;
-  margin: 0 auto;
-  z-index: -1;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: sans-serif;
-  background-color: #0077cc;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  max-width: 300px;
-  min-width: 300px;
-  margin: 5rem auto;
-  padding: 20px;
-  background-color: #ffffff83;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-}
-
-h1 {
-  font-family: "Bebas Neue";
-  font-size: 40px;
-  text-decoration: none;
-  color: #0077cc;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-input[type="text"],
-input[type="password"] {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
-}
-
-button[type="submit"] {
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  background-color: #0077cc;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button[type="submit"]:hover {
-  background-color: #0060a7;
-}
-
-.blur {
-  filter: blur(10px);
-  transition: filter 0.4s ease-in-out;
-}
-
-
-</style>
-
 <body>
   
   
-  <footer class="container">
+  <main class="container">
       <div class="troll">
         <img src="troll.png" alt="" width="240px" height="240px">
       </div>
@@ -103,37 +24,13 @@ button[type="submit"]:hover {
     <form>
       <input type="text" placeholder="Usuário" id="username" name="username" required />
       <input type="password" placeholder="Senha" id="password" name="password" required />
-      <button type="submit" id="login-btn">Login</button>
+      <button type="submit" id="login-btn">Entrar</button>
     </form>
-  </footer>
-    
-  <script>
-    const form = document.querySelector("form");
-    const loginBtn = document.querySelector("#login-btn");
+  </main>
 
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
+  <h2>Create by Marx Ⓡ 2023</h2>
+      
+  <script src="./js/index.js"></script>
 
-      const username = form.username.value.trim();
-      const password = form.password.value.trim();
-
-      if (username === "Master" && password === "Master") {
-        document.body.classList.add("blur");
-        setTimeout(function () {
-          window.location.href = "./buscar.html";
-        }, 500);
-
-        let mathRandom = Math.random().toString(16).substr(2);
-        let token = mathRandom + mathRandom;
-
-        localStorage.setItem("token", token);
-      } else if (username === "" || password === "") {
-        alert("Por favor, insira um nome de usuário e senha");
-      } else {
-        alert("Usuário ou senha incorretos");
-        form.reset();
-      }
-    });
-  </script>
   </body>
 </html>
