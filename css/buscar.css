@@ -16,7 +16,7 @@ body {
 
 nav {
   background-color: #0060a7;
-  padding: 1rem;
+  padding: 1px 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -61,15 +61,27 @@ input[type="text"] {
   font-size: 1rem;
 }
 
+a {
+  text-decoration: none;
+  color: #f7f7f7;
+  padding: 10px 20px;
+}
+
+.menu {
+  display: block;
+  justify-content: space-between;
+  margin: 10px;
+}
+
 button[type="submit"] {
   width: 100%;
   margin-top: 10px;
 }
 
 #certification-frame {
-  margin-top: 20px;
+  margin-top: 5px;
   width: 100%;
-  height: 200px;
+  height: 40vh;
 }
 
 .buscar {
@@ -102,6 +114,16 @@ img:hover {
   animation-duration: 1s;
   animation-name: slideout;
   background-color: #0060a7;
+}
+
+@media (max-width: 380px) {
+  img {
+    display: none;
+  }
+  nav {
+    justify-content: start;
+    font-size: 30px;
+  }
 }
 
 @keyframes slideout {
