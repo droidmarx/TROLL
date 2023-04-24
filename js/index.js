@@ -10,6 +10,7 @@ const users = [
   { username: "Lucas", password: "Conti" },
   { username: "Rafael", password: "Borges" },
   { username: "Adriano", password: "270301" },
+  { username: "80849169", password: "Alemanha@19" },
   // adicionar mais usuarios
 ];
 
