@@ -2,11 +2,11 @@ const form = document.querySelector("form");
 const loginBtn = document.querySelector("#login-btn");
 
 const users = [
+  { username: "Gui", password: "Marx" },
   { username: "Bigshark", password: "Bigdick" },
   { username: "Felipe", password: "Cheira" },
   { username: "Gustavo", password: "Alves" },
   { username: "Douglas", password: "Rosa" },
-  { username: "Gui", password: "Marx" },
   { username: "Lucas", password: "Conti" },
   { username: "Rafael", password: "Borges" },
   { username: "Adriano", password: "270301" },
