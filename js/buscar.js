@@ -1,46 +1,32 @@
-const form = document.querySelector("form");
-const loginBtn = document.querySelector("#login-btn");
+if (localStorage.getItem("token") == null) {
+  alert("Você precisa estar logado para acessar essa página");
+  window.location.href = "./index.html";
+}
 
-const users = [
-  { username: "Gui", password: "Marx" },
-  { username: "Bigshark", password: "Bigdick" },
-  { username: "Felipe", password: "Cheira" },
-  { username: "Gustavo", password: "Alves" },
-  { username: "Douglas", password: "Rosa" },
-  { username: "Lucas", password: "Conti" },
-  { username: "Rafael", password: "Borges" },
-  { username: "Adriano", password: "270301" },
-  // adicionar mais usuarios
-];
+function handleClean() {
+  const number = document.querySelector("#number").value;
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+  const endpoint = `https://wom.gvt.com.br:19900/wfm/certificationClean/certificationClean.faces?&aid=${number}&userlogin=x&atoken=gvt`;
 
-  const username = form.username.value.trim();
-  const password = form.password.value.trim();
-
-  let authenticated = false;
-  for (let user of users) {
-    if (user.username === username && user.password === password) {
-      authenticated = true;
-      break;
-    }
+  const iframe = document.querySelector("#certification-frame");
+  if (iframe) {
+    iframe.remove();
   }
 
-  if (authenticated) {
-    document.body.classList.add("blur");
-    setTimeout(function () {
-      window.location.href = "./buscar.html";
-    }, 500);
+  const newIframe = document.createElement("iframe");
+  newIframe.id = "certification-frame";
+  newIframe.src = endpoint;
+  document.body.appendChild(newIframe);
+}
 
-    let mathRandom = Math.random().toString(16).substr(2);
-    let token = mathRandom + mathRandom;
+function handleLogout() {
+  document.body.classList.add("blur");
+  localStorage.removeItem("token");
+  setTimeout(() => {
+    window.location.href = "./index.html";
+  }, 500);
+}
 
-    localStorage.setItem("token", token);
-  } else if (username === "" || password === "") {
-    alert("Por favor, insira um nome de usuário e senha");
-  } else {
-    alert("Usuário ou senha incorretos");
-    form.reset();
-  }
-});
+function handleMigrar() {
+  window.location.href = "./migrar.html";
+}
