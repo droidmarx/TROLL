@@ -26,3 +26,7 @@ function handleLogout() {
     window.location.href = "./index.html";
   }, 500);
 }
+
+function handleMigrar() {
+  window.location.href = "./migrar.html";
+}
