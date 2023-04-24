@@ -91,17 +91,10 @@ button[type="submit"] {
 
 img {
   width: 3rem;
-  transition: 0.5s ease;
-}
-
-img:hover {
-  transform: rotate(1090deg);
-  transition: 2s;
-  scale: 2;
 }
 
 .logo {
-  font-family: "Bebas Neue", cursive;
+  font-family: "Bebas Neue";
   font-size: 40px;
   text-decoration: none;
   color: #f7f7f7;
@@ -111,27 +104,26 @@ img:hover {
 .blur {
   filter: blur(7px);
   transition: filter 0.8s ease-out;
-  animation-duration: 1s;
+  animation-duration: 0.8s;
   animation-name: slideout;
   background-color: #0060a7;
 }
 
-@media (max-width: 380px) {
+@media (max-width: 530px) {
   img {
     display: none;
   }
   nav {
-    justify-content: start;
-    font-size: 30px;
+    font-family: "roboto";
+    display: flex;
+    gap: 1px;
+    padding: 1%;
+    justify-content: center;
   }
-}
-
-@keyframes slideout {
-  to {
-    scale: 0.1;
+  .logo {
+    font-size: 1.5rem;
   }
-  from {
-    filter: blur(200px);
-    scale: 1.2;
+  a {
+    position: contents;
   }
 }
