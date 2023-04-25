@@ -69,6 +69,8 @@ label {
 
 input[type="text"],
 input[type="password"] {
+  background: #3477b369;
+  color: #000;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
