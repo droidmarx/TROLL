@@ -11,6 +11,8 @@ const users = [
   { username: "Rafael", password: "Borges" },
   { username: "Adriano", password: "270301" },
   { username: "Simone", password: "102030" },
+  { username: "Leandro", password: "102030" },
+  { username: "dianini", password: "102030" },
   // adicionar mais usuarios
 ];
 
@@ -38,7 +40,7 @@ form.addEventListener("submit", (e) => {
     let token = mathRandom + mathRandom;
 
     localStorage.setItem("token", token);
-  } else if (username === "#" || password === "#") {
+  } else if (username === "" || password === "") {
     alert("Por favor, insira um nome de usuário e senha");
   } else {
     alert("Usuário ou senha incorretos");

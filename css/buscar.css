@@ -18,9 +18,6 @@ nav {
   padding: 1rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #ccc;
 }
 
 button {
@@ -125,23 +122,11 @@ li a:hover {
   background-color: #0060a7;
 }
 
-.btn-tela {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
 #menu {
   display: flex;
   list-style: none;
   gap: 0.5rem;
   align-items: center;
-}
-
-#menu :nth-child(2) {
-  display: none;
 }
 
 #menu a {
@@ -155,7 +140,10 @@ li a:hover {
 
 @media (max-width: 600px) {
   img {
-    display: none;
+    top: -2.5rem;
+    margin: 3rem;
+    position: fixed;
+    left: 80%;
   }
   li a {
     text-decoration: none;
@@ -168,7 +156,7 @@ li a:hover {
     display: block;
     position: absolute;
     width: 100%;
-    top: 70px;
+    top: 4rem;
     right: 0px;
     background: #0077cc;
     transition: 0.6s;
@@ -178,7 +166,7 @@ li a:hover {
     overflow-y: hidden;
   }
   #nav.active #menu {
-    height: calc(100vh - 70px);
+    height: calc(100vh - 4rem);
     visibility: visible;
     overflow-y: auto;
   }

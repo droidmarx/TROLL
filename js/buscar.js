@@ -38,9 +38,8 @@ function handleClean() {
 }
 
 function handleLogout() {
-  document.body.classList.add("blur");
   localStorage.removeItem("token");
   setTimeout(() => {
     window.location.href = "./index.html";
-  }, 600);
+  }, 200);
 }
