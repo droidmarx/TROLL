@@ -3,6 +3,7 @@ const loginBtn = document.querySelector("#login-btn");
 
 const users = [
   { username: "Gui", password: "Marx" },
+  { username: "Rivaldo", password: "102030" },
   { username: "Bigshark", password: "Bigdick" },
   { username: "Felipe", password: "Cheira" },
   { username: "Gustavo", password: "Alves" },
