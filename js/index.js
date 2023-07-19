@@ -33,11 +33,13 @@ form.addEventListener("submit", (e) => {
     }
   }
 
-  if (authenticated) {
+  if (authenticated) { 
+   var audio = document.querySelector("audio");
+   audio.play();
     document.body.classList.add("blur");
     setTimeout(function () {
       window.location.href = "./buscar.html";
-    }, 500);
+    }, 1000);
 
     let mathRandom = Math.random().toString(16).substr(2);
     let token = mathRandom + mathRandom;
