@@ -46,6 +46,8 @@ function mostrarMigrar() {
 
 // Limpar Loading
 function handleClean() {
+ var audio = document.querySelector("audio");
+   audio.play();
   const loadingContainer = document.querySelector('.loading-container');
   loadingContainer.style.display = 'flex';
   const number = document.querySelector("#number").value;
@@ -65,6 +67,9 @@ function handleClean() {
 
 // Migrar Loading
 function handleMigrate() {
+ var audio = document.querySelector("audio");
+
+   audio.play();
   const loadingContainer = document.querySelector('.loading-container');
   loadingContainer.style.display = 'flex';
   const number = document.querySelector("#number").value;
