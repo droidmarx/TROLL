@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: 1s;
+  transition: 2s;
 }
 
 
@@ -292,7 +292,7 @@ li a:hover {
     height: 2px;
     background: currentColor;
     margin-top: 5px;
-    transition: 0.3s;
+    transition: 0.3s !important;
     position: relative;
   }
   #nav.active #hamburger {
