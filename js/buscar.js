@@ -34,17 +34,37 @@ menuItems.forEach(function(item) {
 function mostrarLimpar() {
   document.getElementById('limpar').style.display = 'block';
   document.getElementById('migrar').style.display = 'none';
-  
+  const iframe = document.querySelector("#certification-frame");
+  const buscar = document.querySelector(".buscar");
+  const body = document.body;
+  const nav = document.getElementById('nav')
+  const ul = document.getElementById('menu')
+  body.style.background = '#5a7588';
+  nav.style.background = '#3b3d3f';
+  ul.style.background = '#3b3d3f'; 
+  limpar.style.background = '#3b3d3f';
+  buscar.style.background = '#5a7588';
+  iframe.remove();
 }
 
 // Mostrar Migrar
 function mostrarMigrar() {
   document.getElementById('migrar').style.display = 'block';
   document.getElementById('limpar').style.display = 'none';
+  const iframe = document.querySelector("#certification-frame");
+  const body = document.body;
+  const nav = document.getElementById('nav')
+  const ul = document.getElementById('menu')
+  body.style.background = '#3b3d3f'; 
+  nav.style.background = '#5a7588';
+  ul.style.background = '#5a7588'; 
+  iframe.remove();
+
+  
 }
 
 
-// Limpar Loading
+
 function handleClean() {
  var audio = document.querySelector("audio");
    audio.play();
@@ -67,9 +87,7 @@ function handleClean() {
 
 // Migrar Loading
 function handleMigrate() {
- var audio = document.querySelector("audio");
-
-   audio.play();
+ var audio = document.querySelector("audio"); audio.play();
   const loadingContainer = document.querySelector('.loading-container');
   loadingContainer.style.display = 'flex';
   const number = document.querySelector("#number").value;
