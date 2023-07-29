@@ -1,8 +1,8 @@
 # TrollBox
   
- Sistema desenvolvido com a finalidade de ajudar técnicos de telecomunicações. Com ferramentas que auxiliam na produtividade e certificação dos produtos instalados.
+ Sistema desenvolvido a quesito de estudo, porém com um grande potencial de ajudar técnicos em campo na area de telecomunicaçõe, com ferramentas que auxiliam na agilidade da produtividade e certificação dos produtos instalados.
 
-Para adicionar um login e senha, é necessário entrar em contato com desenvolvedor do sistema.
+Sistema simplista e acertivo, caso queira logar para dar uma espiada me envie um e-mail.
 
  ## Tecnologias usadas 
   
