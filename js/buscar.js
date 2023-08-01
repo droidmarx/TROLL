@@ -115,6 +115,5 @@ function handleLogout() {
 
 // Verificar token e redirecionar para a página de login se não estiver logado
 if (localStorage.getItem("token") == null) {
-  alert("Você precisa estar logado para acessar essa página");
   window.location.href = "./index.html";
 }

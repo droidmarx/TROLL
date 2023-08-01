@@ -16,7 +16,6 @@ const users = [
  { username: "Leandro", password: "102030" },
  { username: "Wendel", password: "Drumil" },
  { username: "Dayvison", password: "102030" },
-{ username: "Rene", password: "rene123" },
    // adicionar mais usuarios 
  ];
 
@@ -40,7 +39,7 @@ form.addEventListener("submit", (e) => {
     document.body.classList.add("blur");
     setTimeout(function () {
       window.location.href = "./buscar.html";
-    }, 1000);
+    }, 1300);
 
     let mathRandom = Math.random().toString(16).substr(2);
     let token = mathRandom + mathRandom;
@@ -49,7 +48,29 @@ form.addEventListener("submit", (e) => {
   } else if (username === "" || password === "") {
     alert("Por favor, insira um nome de usuário e senha");
   } else {
-    alert("Usuário ou senha incorretos");
+    let p = document.querySelector('p');
+    p.style.opacity = '1';
+    
+    let troll = document.querySelector('.troll')
+    
+    var wou = document.getElementById("wou");
+    wou.play();
+    
+    troll.classList.add('scale');
+  setTimeout(() => {
+    troll.classList.remove('scale');
+  }, 1400); 
+    
     form.reset();
   }
+  
+const myParagraph = document.getElementById('myParagraph');
+
+function hideParagraph() {
+  myParagraph.style.opacity = '0';
+}
+
+setTimeout(hideParagraph, 3500);
+
+  
 });
