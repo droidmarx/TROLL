@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/buscar.css">
+  
+
 
   <title>Limpar Certificação</title>
 </head>
@@ -57,10 +59,41 @@
      <div class="loading"></div>
   </div>
   
+<div class="location">
+  <div id="rua">
+    <h2>Carregando...</h2>
+  </div>
+  <div id="location"></div>
+  <div id="mapLink"></div>
+</div>
 
-  
-  
-  
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeq0Q507-ePcIpTJzOrUsy6ynSwu28IKg&libraries=places"></script>
+<script>
+  function showPosition(position) {
+    var lat = position.coords.latitude;
+    var lng = position.coords.longitude;
+    var latlng = new google.maps.LatLng(lat, lng);
+    var geocoder = new google.maps.Geocoder();
+
+    geocoder.geocode({ 'latLng': latlng }, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        if (results[0]) {
+          document.getElementById('rua').innerHTML = results[0].formatted_address;
+          var mapLink = 'https://www.google.com/maps?q=' + lat + ',' + lng;
+          document.getElementById('mapLink').innerHTML = '<a href="' + mapLink + '">Ver no mapa</a>';
+        } else {
+          alert('No results found');
+        }
+      } else {
+        alert('Geocoder failed due to: ' + status);
+      }
+    });
+  }
+
+  // Chamada para obter a localização do usuário
+  navigator.geolocation.getCurrentPosition(showPosition);
+</script>
+
 
   <script src="./js/buscar.js"></script>
 </body>
