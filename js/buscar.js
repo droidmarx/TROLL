@@ -1,3 +1,5 @@
+
+
 const btnMobile = document.getElementById("btn-mobile");
 
 function toggleMenu(event) {
@@ -71,7 +73,7 @@ function handleClean() {
   const loadingContainer = document.querySelector('.loading-container');
   loadingContainer.style.display = 'flex';
   const number = document.querySelector("#number").value;
-  const endpoint = `https://wom.gvt.com.br:19900/wfm/certificationClean/certificationClean.faces?&aid=${number}&userlogin=x&atoken=gvt`;
+  const endpoint = `https://wom.gvt.com.br:19900/wfm/mobile/certificationClean/certificationClean.faces?backUrl=https%3A%2F%2Fgvt.etadirect.com%2Fmobility%2F&aid=${number}&userlogin=x&atoken=gvt`;
   const iframe = document.querySelector("#certification-frame");
   if (iframe) {
     iframe.remove();
@@ -87,7 +89,8 @@ function handleClean() {
 
 // Migrar Loading
 function handleMigrate() {
- var audio = document.querySelector("audio"); audio.play();
+  var audio = document.querySelector("audio"); 
+  audio.play();
   const loadingContainer = document.querySelector('.loading-container');
   loadingContainer.style.display = 'flex';
   const number = document.querySelector("#number").value;
@@ -117,3 +120,14 @@ function handleLogout() {
 if (localStorage.getItem("token") == null) {
   window.location.href = "./index.html";
 }
+
+// Verificar erro de conexão no iframe
+window.addEventListener('message', function(event) {
+  if (event.origin === 'https://wom.gvt.com.br') {
+    if (event.data === 'connection_refused') {
+      alert("Erro ao obter dados, abra em outro navegador sem ser o Chrome");
+    }
+  }
+});
+
+
