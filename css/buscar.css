@@ -307,3 +307,10 @@ li a:hover {
   }
 }
 
+.location{
+  font-family: "Bebas Neue";
+  font-weight: 1px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
